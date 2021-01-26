@@ -38,6 +38,6 @@ The computation time will increase quickly if you attempt to use massive images.
 
 ## sample output
 
-The below GIF is the result of having a chameleon morph into a pair of elephants crossing a road in a forest.
+The below GIF is the result of having a chameleon morph into a pair of elephants crossing a road in a forest. The filler and skeleton images were both found on [Pexels](https://www.pexels.com/).
 
 ![GIF of a chameleon morphing into a pair of elephants](pixel-shuffle.gif)
