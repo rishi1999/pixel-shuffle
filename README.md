@@ -35,7 +35,7 @@ You'll need to install a few standard packages (e.g., NumPy, SciPy, Matplotlib).
 
 ## usage
 
-Place the images you want to morph in the `./input/` folder.
+Place the images you want to morph in the `input/` folder.
 Specify the filenames in the Jupyter Notebook.
 
 Run the Notebook.
@@ -51,6 +51,6 @@ The computation time will increase quickly if you attempt to use massive images.
 
 ## sample output
 
-The below GIF is the result of having a chameleon morph into a woman sitting in a chair. The filler and skeleton images were both found on [Pexels](https://www.pexels.com/).
+The below GIF is the result of having a chameleon morph into a woman sitting in a chair. The original images can be found in the `sample/` folder. Both images were obtained from [Pexels](https://www.pexels.com/).
 
 ![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
