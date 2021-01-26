@@ -24,3 +24,16 @@ Just clone the repo. You'll also need to have a few standard packages installed 
 ## usage
 
 Place the images you want to morph in the `./images/` folder. Run the Jupyter Notebook.
+
+## tips
+
+The results tend to turn out better if you
+- use images of similar dimensions and decent quality
+- use a relatively colorful image for the filler image; it doesn't matter all that much for the skeleton image
+
+Expect the program to take a couple minutes to run for images that are ~ 1 MP.
+The computation time will increase quickly if you attempt to use massive images.
+
+## sample output
+
+![GIF of a chameleon morphing into a pair of elephants](pixel-shuffle.gif)
