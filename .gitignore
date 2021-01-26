@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 # Personal
-images/
+input/*
+!input/.keep
+output/*
+!output/.keep
