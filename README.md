@@ -1,6 +1,6 @@
 # pixel-shuffle
 
-## Intro
+## intro
 
 This is not your traditional image morphing app.
 
@@ -13,7 +13,14 @@ The result is a picture that has the form and structure of the second image and 
 
 To the best of my knowledge, this repo contains the first publicly available implementation of the third strategy.
 
-## The math
+## the math
 
 We have two `m` by `n` images, each of which can be interpreted as a set of `mn` RGB tuples. For each tuple in the first set, we want to find the tuple in the second set that is most similar. To judge what is most similar, I chose to minimize Euclidean distance (but it would be interesting to experiment with other metrics as well). Given any tuple from the first set and any tuple from the second set, we can associate with the pair a "cost", given by the Euclidean distance. Another way to think of this setup is that we have a complete bipartite graph, where the tuples of one set are on one side and the tuples of the other set are on the other side. We assign each edge a weight based on the cost associated with the pair of endpoints. Finding the optimal assignment of pixels to construct the image morph is equivalent to finding a minimum weight bipartite matching in this graph. This is exactly the [balanced assignment problem](https://en.wikipedia.org/wiki/Assignment_problem#Balanced_assignment). Luckily for us, included in the SciPy library is an efficient [method for solving this problem](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html).
 
+## installation
+
+Just clone the repo. You'll also need to have a few standard packages installed (e.g., NumPy, SciPy, Matplotlib).
+
+## usage
+
+Place the images you want to morph in the `./images/` folder. Run the Jupyter Notebook.
