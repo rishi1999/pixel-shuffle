@@ -1,3 +1,4 @@
+![GitHub](https://img.shields.io/github/license/rishi1999/pixel-shuffle)
 [![This Repository uses a generated Social Preview from @pqt/social-preview](https://img.shields.io/badge/%E2%9C%93-Social%20Preview-blue)](https://github.com/pqt/social-preview)
 
 # pixel-shuffle
