@@ -16,7 +16,7 @@ The result is a picture that has the form and structure of the second image and 
 
 To the best of my knowledge, this repo contains the first publicly available implementation of this approach.
 
-## the math
+## algorithm
 
 We have two `m` by `n` images, each of which can be interpreted as a set of `mn` RGB tuples.
 For each tuple in the first set, we want to find the tuple in the second set that is most similar.
