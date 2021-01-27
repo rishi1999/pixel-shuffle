@@ -28,6 +28,6 @@ Luckily for us, included in the SciPy library is an [efficient method for solvin
 
 The below GIF is the result of having a chameleon morph into a woman sitting in a chair.
 
-![GIF of a chameleon morphing into a woman sitting in a chair](../sample/sample_out.gif)
+![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
 
 [link to the repo](https://github.com/rishi1999/pixel-shuffle)
