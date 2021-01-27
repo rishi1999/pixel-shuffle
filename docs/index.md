@@ -1,3 +1,5 @@
+# Pixel Shuffle
+
 ## the idea
 
 There are two primary ways to do image morphing. The simplest method works by interpolating between two images (i.e., one fades out and the other fades in).
