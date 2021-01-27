@@ -1,7 +1,5 @@
 ## the idea
 
-This is not your traditional image morphing app.
-
 There are two primary ways to do image morphing. The simplest method works by interpolating between two images (i.e., one fades out and the other fades in).
 The other involves stretching the features of the image and distorting the colors to blend between two images.
 
@@ -26,6 +24,8 @@ Luckily for us, included in the SciPy library is an [efficient method for solvin
 
 ## the result!
 
-The below GIF is the result of having a chameleon morph into a woman sitting in a chair. The original images can be found in the `sample/` folder. Both images were obtained from [Pexels](https://www.pexels.com/).
+The below GIF is the result of having a chameleon morph into a woman sitting in a chair.
 
 ![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
+
+[link to the repo](https://github.com/rishi1999/pixel-shuffle)
