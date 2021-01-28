@@ -24,7 +24,7 @@ Luckily for us, included in the SciPy library is an [efficient method for solvin
 
 ## the result!
 
-The below GIF is the result of having a chameleon morph into a woman sitting in a chair.
+<img src="sample/chameleon.jpg" width="40.4%" /> <img src="sample/woman.jpg" width="45%" />
 
 ![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
 
