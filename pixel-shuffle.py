@@ -58,6 +58,8 @@ fill_arr = np.asarray(fill_img)
 rows, cols, _ = skel_arr.shape
 
 
+## Solve bipartite matching problem. ##
+
 precision = args.precision
 
 total_pixels = skel_arr.size
@@ -98,6 +100,8 @@ for i in range(r):
         final_arr[i*O:i*O+O, j*O:j*O+O] = fill_arr[i2*O:i2*O+O, j2*O:j2*O+O].copy()
 
 
+## If user only wants the final frame, save it to disk and exit program. ##
+
 if args.final:
 	import sys
 
@@ -113,6 +117,8 @@ if args.final:
 	print("done")
 	sys.exit()
 
+
+## Interpolate between filler image and final frame to get frames for animation. ##
 
 print("generating interpolation frames..")
 
@@ -195,6 +201,8 @@ if interp_mode == "fixed":
         interp_arrs.append(arr)
         interp_coef += 1
 
+
+## Generate animation and save it to disk. ##
 
 print("generating animation..")
 
