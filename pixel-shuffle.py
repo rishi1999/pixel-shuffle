@@ -15,7 +15,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-print("initializing..")
 
 import argparse
 parser = argparse.ArgumentParser(description="morph one image into another")
@@ -25,17 +24,19 @@ parser.add_argument("-p", "--precision", default=5000,
 	help="specify level of pixelation in output", type=int)
 parser.add_argument("-i", "--interpolation", default="fixed", 
 	choices=["fixed", "prop", "dissolve"], help="specify which interpolation style to use")
+parser.add_argument("-f", "--final", help="save only the final frame", action="store_true")
 args = parser.parse_args()
 
+
+print("initializing..")
 
 from PIL import Image
 import matplotlib.pyplot as plt
 from matplotlib import animation
-import scipy
 from scipy import optimize
 import numpy as np
 from tqdm import trange, tqdm
-import math
+from math import sqrt
 from datetime import datetime
 
 
@@ -44,8 +45,8 @@ rng = np.random.default_rng()
 skeleton_filename = args.skeleton_img
 filler_filename = args.filler_img
 
-skel_img = Image.open("input/" + skeleton_filename)
-fill_img = Image.open("input/" + filler_filename)
+skel_img = Image.open(skeleton_filename)
+fill_img = Image.open(filler_filename)
 
 dims = skel_img.size
 fill_img = fill_img.resize(dims)
@@ -60,7 +61,7 @@ precision = args.precision
 
 total_pixels = skel_arr.size
 
-O = int(math.sqrt(total_pixels / precision))
+O = int(sqrt(total_pixels / precision))
 
 r = rows // O
 c = cols // O
@@ -94,6 +95,22 @@ for i in range(r):
         j2 = temp % c
         
         final_arr[i*O:i*O+O, j*O:j*O+O] = fill_arr[i2*O:i2*O+O, j2*O:j2*O+O].copy()
+
+
+if args.final:
+	import sys
+
+	plt.imshow(final_arr)
+	plt.axis("off")
+
+	datetime_obj = datetime.now()
+	timestamp = datetime_obj.strftime("%Y-%m-%d_%H-%M-%S")
+	output_filename = "pixel-shuffle_" + timestamp + ".png"
+
+	plt.savefig(output_filename)
+	
+	print("done")
+	sys.exit()
 
 
 print("generating interpolation frames..")
@@ -206,7 +223,7 @@ plt.axis("off")
 
 datetime_obj = datetime.now()
 timestamp = datetime_obj.strftime("%Y-%m-%d_%H-%M-%S")
-output_filename = "output/pixel-shuffle_" + timestamp + ".gif"
+output_filename = "pixel-shuffle_" + timestamp + ".gif"
 
 ani.save(output_filename, writer="pillow")
 
