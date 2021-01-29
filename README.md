@@ -55,8 +55,9 @@ The results tend to turn out better if you
 - use images of similar dimensions and decent quality
 - use a relatively colorful image for the filler image; it doesn't matter all that much for the skeleton image
 
-Expect the program to take a couple minutes to run for images that are ~ 1 MP.
-The computation time will increase quickly if you attempt to use massive images.
+The program will take a couple minutes to run on average.
+Larger images will be more pixelated to compensate for the increased computational load.
+Expect execution time to increase rapidly when using higher `PRECISION` values.
 
 ## sample output
 
