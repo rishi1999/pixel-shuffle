@@ -44,7 +44,7 @@ Specify their filenames in the code. Run the Notebook.
 
 ### Python script
 Execute the following command in your terminal:
-```
+```bash
 python pixel-shuffle.py
 ```
 Add the `--help` flag for specific usage instructions.
