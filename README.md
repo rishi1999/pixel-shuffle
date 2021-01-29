@@ -25,7 +25,7 @@ Given any tuple from the first set and any tuple from the second set, we can ass
 Another way to think of this setup is that we have a complete bipartite graph, where the tuples of one set are on one side and the tuples of the other set are on the other side.
 We assign each edge a weight based on the cost associated with the pair of endpoints.
 
-Finding the optimal assignment of pixels to construct the image morph is equivalent to finding a minimum weight bipartite matching in this graph.
+Finding the optimal assignment [1] of pixels to construct the image morph is equivalent to finding a minimum weight bipartite matching in this graph.
 This is exactly the [balanced assignment problem](https://en.wikipedia.org/wiki/Assignment_problem#Balanced_assignment).
 Luckily for us, included in the SciPy library is an [efficient method for solving this problem](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html).
 
@@ -64,3 +64,5 @@ Expect execution time to increase rapidly when using higher `PRECISION` values.
 This animation is the result of having a chameleon morph into a woman sitting in a chair with `PRECISION=12000`. The original images can be found in the `sample/` folder. Both images were obtained from [Pexels](https://www.pexels.com/).
 
 ![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
+
+[1]: In theory, an adversarial pair of inputs could confuse the algorithm into producing meaningless output. For example, we could pair a filler image in which every pixel has RGB value `(255,0,0)` or `(0,255,0)` with a skeleton image in which every pixel has RGB value of the form `(0,0,x)`. Since the algorithm is color-agnostic, the program would not be smart enough to use red pixels for light green and blue pixels for dark green or some analogous strategy. Many of these adversarial situations can be easily fixed, however, by adding an RGB perturbation of `(0,1,2)`, for example, to each pixel in the skeleton image.
