@@ -61,6 +61,6 @@ Expect execution time to increase rapidly when using higher `PRECISION` values.
 
 ## sample output
 
-The below GIF is the result of having a chameleon morph into a woman sitting in a chair. The original images can be found in the `sample/` folder. Both images were obtained from [Pexels](https://www.pexels.com/).
+This animation is the result of having a chameleon morph into a woman sitting in a chair with `PRECISION=12000`. The original images can be found in the `sample/` folder. Both images were obtained from [Pexels](https://www.pexels.com/).
 
 ![GIF of a chameleon morphing into a woman sitting in a chair](sample/sample_out.gif)
