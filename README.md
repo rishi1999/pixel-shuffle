@@ -31,17 +31,23 @@ Luckily for us, included in the SciPy library is an [efficient method for solvin
 
 ## installation
 
-Clone the repo.
+Clone the repo. Or, if you want a lightweight installation, you could download just `pixel-shuffle.py` by itself.
 
 I would recommend creating a Conda environment to avoid messing with your base installation, but this is optional.
 You'll need to install a few standard packages (e.g., NumPy, SciPy, Matplotlib).
 
 ## usage
 
+### Jupyter Notebook
 Place the images you want to morph in the `input/` folder.
-Specify the filenames in the Jupyter Notebook.
+Specify their filenames in the code. Run the Notebook.
 
-Run the Notebook.
+### Python script
+Execute the following command in your terminal:
+```
+python pixel-shuffle.py
+```
+Add the `--help` flag for specific usage instructions.
 
 ## tips
 
