@@ -17,6 +17,17 @@
 
 print("initializing..")
 
+import argparse
+parser = argparse.ArgumentParser(description="morph one image into another")
+parser.add_argument("filler_img", help="use this image as the filler image")
+parser.add_argument("skeleton_img", help="use this image as the skeleton image")
+parser.add_argument("-p", "--precision", default=5000, 
+	help="specify level of pixelation in output", type=int)
+parser.add_argument("-i", "--interpolation", default="fixed", 
+	choices=["fixed", "prop", "dissolve"], help="specify which interpolation style to use")
+args = parser.parse_args()
+
+
 from PIL import Image
 import matplotlib.pyplot as plt
 from matplotlib import animation
@@ -27,10 +38,11 @@ from tqdm import trange, tqdm
 import math
 from datetime import datetime
 
+
 rng = np.random.default_rng()
 
-skeleton_filename = "woman.jpg"
-filler_filename = "chameleon.jpg"
+skeleton_filename = args.skeleton_img
+filler_filename = args.filler_img
 
 skel_img = Image.open("input/" + skeleton_filename)
 fill_img = Image.open("input/" + filler_filename)
@@ -44,7 +56,7 @@ fill_arr = np.asarray(fill_img)
 rows, cols, _ = skel_arr.shape
 
 
-precision = 5000  # default to 5000
+precision = args.precision
 
 total_pixels = skel_arr.size
 
@@ -86,7 +98,7 @@ for i in range(r):
 
 print("generating interpolation frames..")
 
-interp_mode = "fixed"  # default to "fixed"
+interp_mode = args.interpolation
 
 if interp_mode == "prop" or interp_mode == "dissolve":
     interp_coef = 50
