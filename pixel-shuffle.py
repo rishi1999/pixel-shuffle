@@ -22,9 +22,10 @@ parser.add_argument("filler_img", help="use this image as the filler image")
 parser.add_argument("skeleton_img", help="use this image as the skeleton image")
 parser.add_argument("-p", "--precision", default=5000, 
 	help="specify level of pixelation in output", type=int)
-parser.add_argument("-i", "--interpolation", default="fixed", 
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-i", "--interpolation", default="fixed", 
 	choices=["fixed", "prop", "dissolve"], help="specify which interpolation style to use")
-parser.add_argument("-f", "--final", help="save only the final frame", action="store_true")
+group.add_argument("-f", "--final", help="save only the final frame", action="store_true")
 args = parser.parse_args()
 
 
